@@ -270,10 +270,11 @@
 
 - 移除package.json中的type：‘module’
 
-## 代办
+## 待办
 
 - [x] 创建github仓库
 - [x] 配置vite.cofnig.ts 配置别名
 - [x] 配置eslint
 - [x] 配置GitCommit
+- [ ] 添加elementplus
 
