@@ -5,7 +5,9 @@ module.exports = {
     node: true
   },
   extends: [
-    'plugin:vue/essential',
+    // 'plugin:vue/essential',
+    // 使用 vue3 规则
+    'plugin:vue/vue3-strongly-recommended',
     'standard'
   ],
   parserOptions: {
