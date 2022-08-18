@@ -230,6 +230,8 @@
 
 - 在根目录新建 commitlint.config.js   
 
+- yarn add  @commitlint/cli @commitlint/config-conventional  -D
+
   ```
   // commitlint.config.js
    
@@ -273,5 +275,5 @@
 - [x] 创建github仓库
 - [x] 配置vite.cofnig.ts 配置别名
 - [x] 配置eslint
-- [ ] 配置GitCommit
+- [x] 配置GitCommit
 
