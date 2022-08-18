@@ -390,9 +390,29 @@
   
   ```
 
+## 安装sass 
+
+- yarn add sass 
+
+- yarn add normalize.scss
+
+  ```
+  // main.ts
+  import { createApp } from 'vue'
+  import router, { setupRouter } from './router' // 路由
+  import { createPinia } from 'pinia'
+  import App from './App.vue'
+  import 'normalize.scss/normalize.scss'
+  const app = createApp(App)
+  app.use(createPinia())
+  setupRouter(app) // 引入路由
+  router.isReady().then(() => {
+    app.mount('#app')
+  })
   
+  ```
 
-
+  
 
 ## 待办
 
@@ -402,5 +422,7 @@
 - [x] 配置GitCommit
 - [x] 添加elementplus
 - [x] 添加vue-router
-- [ ] 添加pinia
+- [x] 添加pinia
+- [ ] 添加axios
+- [x] 安装sass    添加normalize.scss
 

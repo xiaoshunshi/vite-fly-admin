@@ -26,6 +26,15 @@ export default defineConfig({
       '@': resolve('src')
     }
   },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        // 两种方式都可以
+        // additionalData: '@import "normalize.scss/normalize.scss";'
+        // additionalData: '@use "@/assets/scss/global.scss" as *;'
+      }
+    }
+  },
   server: {
     // 服务器主机名
     // host: '',
