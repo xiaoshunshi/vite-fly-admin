@@ -355,7 +355,42 @@
 
 ## 使用pinia
 
-- 安装
+- 安装   yarn add pinia
+
+  ```
+  // main.ts
+  import { createPinia } from 'pinia'
+  app.use(createPinia())
+  ```
+
+- src下创建store文件夹，创建index.ts
+
+  ```
+  
+  import { defineStore } from 'pinia'
+  export default defineStore('myGlobalState', {
+    state: () => {
+      return {
+        count: 1,
+        message: 'Hello world',
+      }
+    },
+    actions: {
+      countAdd () {
+        this.count++
+      }
+    },
+    getters: {
+      countSum (state) {
+        return state.count * 2
+      }
+    }
+  
+  })
+  
+  ```
+
+  
 
 
 
