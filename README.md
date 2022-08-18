@@ -270,11 +270,46 @@
 
 - 移除package.json中的type：‘module’
 
+## 安装element-plus
+
+- ```
+  yarn add element-plus
+  ```
+
+- 使用按需加载  yarn add -D unplugin-vue-components unplugin-auto-import
+
+  ```
+  // vite.config.ts
+  import { defineConfig } from 'vite'
+  import AutoImport from 'unplugin-auto-import/vite'
+  import Components from 'unplugin-vue-components/vite'
+  import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+  
+  export default defineConfig({
+    // ...
+    plugins: [
+      // ...
+      AutoImport({
+        resolvers: [ElementPlusResolver()],
+      }),
+      Components({
+        resolvers: [ElementPlusResolver()],
+      }),
+    ],
+  })
+  ```
+
+  
+
+
+
+
+
 ## 待办
 
 - [x] 创建github仓库
 - [x] 配置vite.cofnig.ts 配置别名
 - [x] 配置eslint
 - [x] 配置GitCommit
-- [ ] 添加elementplus
+- [x] 添加elementplus
 
