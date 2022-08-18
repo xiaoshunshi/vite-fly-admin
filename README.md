@@ -266,9 +266,7 @@
   //   chore：不属于以上类型的其他类型
   ```
 
-  
-
-
+- 移除package.json中的type：‘module’
 
 ## 代办
 
