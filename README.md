@@ -349,9 +349,13 @@
 
   ```
   import router, { setupRouter } from './router' // 路由
+  
+  
   ```
 
-  
+## 使用pinia
+
+- 安装
 
 
 
@@ -362,5 +366,6 @@
 - [x] 配置eslint
 - [x] 配置GitCommit
 - [x] 添加elementplus
-- [ ] 添加vue-router
+- [x] 添加vue-router
+- [ ] 添加pinia
 

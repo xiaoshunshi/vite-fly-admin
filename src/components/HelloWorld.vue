@@ -1,11 +1,88 @@
 <script setup lang="ts">
-defineProps<{ msg: string }>()
+import useCommonStore from '@/store/index'
+import { storeToRefs } from 'pinia'
+const store = useCommonStore()
+const data = storeToRefs(store)
+// 常规方法修改内容
+const storeAdd = () => {
+  data.count.value++
+}
+// $patch修改内容
+const storeAddOne = () => {
+  store.$patch({
+    count: store.count + 1
+  })
+}
+// $patch修改内容，内带对象
+const storeAddTwo = () => {
+  store.$patch((state) => {
+    state.count++
+  })
+}
+// $state修改整体内容
+const storeRest = () => {
+  store.$state = {
+    count: 1,
+    message: 'Hello world',
+    phone: 13811111199
+  }
+}
+// $reset重置为初始内容
+const storeRestOne = () => {
+  store.$reset()
+}
+// $subscribe监听整个仓库变化
+store.$subscribe((mutation, store) => {
+  console.log('mutation', mutation)
+  console.log('store', store)
+})
 </script>
 
 <template>
-  <h1>{{ 123 }}</h1>
+  <div class="box">
+    <h2>
+      {{ store.count }}
+      getters获取值{{ store.countSum }}
+      <el-button
+        @click="storeAdd"
+        type="primary"
+      >
+        添加一
+      </el-button>
+      <el-button
+        @click="storeAddOne"
+        type="primary"
+      >
+        添加二
+      </el-button>
+      <el-button
+        @click="storeAddTwo"
+        type="primary"
+      >
+        添加三
+      </el-button>
+      <el-button
+        @click="storeRest"
+        type="primary"
+      >
+        重置一
+      </el-button>
+      <el-button
+        @click="storeRestOne"
+        type="primary"
+      >
+        重置二
+      </el-button>
+      <el-button
+        @click="store.countAdd"
+        type="primary"
+      >
+        actions调用
+      </el-button>
+    </h2>
+  </div>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 
 </style>
