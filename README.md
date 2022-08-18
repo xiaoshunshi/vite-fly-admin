@@ -299,9 +299,59 @@
   })
   ```
 
+## 添加vue-router
+
+- 安装
+
+  ```
+  yarn add vue-router@next
+  ```
+
+-  在目录 src 下新建 router/index.ts index.ts： 
+
+  ```
+  import { createRouter, createWebHistory } from 'vue-router'
+  import type { App } from 'vue'
+  import HelloWorld from '../components/HelloWorld.vue'
   
+  const routerHistory = createWebHistory()
+  // createWebHashHistory hash 路由
+  // createWebHistory history 路由
+  // createMemoryHistory 带缓存 history 路由
+  
+  const router = createRouter({
+  	history: routerHistory,
+  	routes: [
+  		{
+  			path: '/',
+  			component: HelloWorld
+  		}
+  	]
+  })
+  
+  // 删除/重置路由
+  export function resetRoute(): void {
+  	router.getRoutes().forEach(route => {
+  		const { name } = route
+  		if (name) {
+  			router.hasRoute(name) && router.removeRoute(name)
+  		}
+  	})
+  }
+  
+  export function setupRouter(app: App<Element>) {
+  	app.use(router)
+  }
+  export default router
+  ```
 
+- main.ts
 
+  ```
+  import router, { setupRouter } from './router' // 路由
+  ```
+
+  
 
 
 
@@ -312,4 +362,5 @@
 - [x] 配置eslint
 - [x] 配置GitCommit
 - [x] 添加elementplus
+- [ ] 添加vue-router
 
