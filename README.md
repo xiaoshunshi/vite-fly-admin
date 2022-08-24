@@ -426,3 +426,4 @@
 - [ ] 添加axios
 - [x] 安装sass    添加normalize.scss
 
+- [ ] 添加语言国际化i18n

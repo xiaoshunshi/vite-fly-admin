@@ -1,0 +1,6 @@
+# 开发环境代理配置
+VITE_PROXY_DOMAIN = /api
+
+# 代理地址
+
+VITE_PROXY_DOMAIN_REAL = "http://127.0.0.1:9527"

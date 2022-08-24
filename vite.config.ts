@@ -11,9 +11,11 @@ const resolve = (dir: string) => path.join(__dirname, dir)
 export default defineConfig({
   plugins: [
     vue(),
+    // cache设为false表示不做eslint缓存，如果你有eslint报错，然后改好之后还报同样的错，就跟没改一样没有效果，就可以添加cache: false，删掉缓存，页面及时更新
     eslintPlugin({
       cache: false
     }),
+    // 配置element的按需引入
     AutoImport({
       resolvers: [ElementPlusResolver()]
     }),
@@ -22,6 +24,7 @@ export default defineConfig({
     })
   ],
   resolve: {
+    // 设置别名
     alias: {
       '@': resolve('src')
     }
