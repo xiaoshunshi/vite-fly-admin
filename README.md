@@ -412,6 +412,78 @@
   
   ```
 
+
+## 国际化
+
+- yarn add  vue-i18n@next 
+
+- src下添加lang
+
+  ```
+  const en_US = {
+    nav: {
+      chi: 'CN',
+      eng: 'EN',
+      personalCenter: 'Personal Center',
+      logout: 'Sign Out'
+    }
+  }
+  export default en_US
+  
+  const zh_CN = {
+    nav: {
+      chi: '简体中文',
+      eng: '英语',
+      personalCenter: '个人中心',
+      logout: '退出登录'
+    }
+  }
+  export default zh_CN
+  
+  
+  
+  import { createI18n } from 'vue-i18n'
+  
+  // 自定义国际化文件
+  import zh_CN from './zh_CN'
+  import en_US from './en_US'
+  
+  const i18n = createI18n({
+    legacy: false, // Composition API 模式
+    globalInjection: true, // 全局注册 $t方法
+    // 默认语言
+    locale: 'zh_CN',
+    // 语言库
+    messages: {
+      zh_CN,
+      en_US
+    }
+  })
+  
+  // 将i18n暴露出去，在main.js中引入挂载
+  export default i18n
+  
+  
+  
+  
+  import i18n from './lang'
+  app.use(i18n)
+  
+  
+  <div>
+        国际化测试:{{ chi }}{{ eng }}
+        <hr>
+        {{ $t("nav.personalCenter") }}
+  </div>
+  const { locale } = useI18n() // vue-i18n提供了一个钩子函数 useI18n(),暴露出locale属性用于切换语言
+  locale.value = 'en_US' // 要切换的语言
+  // locale.value = 'zh_CN' // 要切换的语言
+  const chi = useI18n().t('nav.chi')
+  const eng = useI18n().t('nav.eng')
+  
+  
+  ```
+
   
 
 ## 待办
@@ -426,4 +498,4 @@
 - [ ] 添加axios
 - [x] 安装sass    添加normalize.scss
 
-- [ ] 添加语言国际化i18n
+- [x] 添加语言国际化i18n

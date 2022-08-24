@@ -22,6 +22,9 @@ module.exports = {
   rules: {
     // 在写变量const {} 写一半时就会在vscode提示出错误来，非常的烦锁
     indent: 'off',
-    '@typescript-eslint/indent': ['error', 2]
+    '@typescript-eslint/indent': ['error', 2],
+    // 允许使用下划线命名
+    camelcase: 'off'
+
   }
 }
