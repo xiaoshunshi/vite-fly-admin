@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="login-container">
     <img
       :src="logo"
       alt=""
@@ -11,4 +11,8 @@
 import logo from '@/assets/login/logo.jpeg'
 </script>
 <style lang='scss' scoped>
+.login-container{
+  height: 100vh;
+  background-color: #2d3a4b;
+}
 </style>
