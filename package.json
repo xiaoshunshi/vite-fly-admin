@@ -48,5 +48,10 @@
     "*.{js,jsx,vue,ts,tsx}": [
       "npm run lint"
     ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
   }
 }
