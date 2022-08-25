@@ -1,5 +1,5 @@
 import type { AppRouteRecordRaw } from '@/router/types'
-import { createRouter, createWebHashHistory, Router } from 'vue-router'
+import { createRouter, createWebHashHistory, Router, RouteRecordRaw } from 'vue-router'
 
 export const constantRoutes:AppRouteRecordRaw[] = [
   {
@@ -19,7 +19,7 @@ export const asyncRoutes: AppRouteRecordRaw[] = [
 
 const router:Router = createRouter({
   history: createWebHashHistory('./'),
-  routes: constantRoutes,
+  routes: constantRoutes.concat(asyncRoutes) as unknown as RouteRecordRaw[],
   scrollBehavior: () => ({ left: 0, top: 0 })
 })
 

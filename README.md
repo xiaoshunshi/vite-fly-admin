@@ -491,7 +491,9 @@
 - [x] 添加elementplus
 - [x] 添加vue-router
 - [x] 添加pinia
-- [ ] 添加axios
+- [x] 添加axios，封装axios
 - [x] 安装sass    添加normalize.scss
 - [x] 添加语言国际化i18n
-- [ ] 准备登录页面
+- [x] 重写路由，添加ts配置校验
+- [ ] 登录页面
+- [ ] layout和全局路由拦截功能
