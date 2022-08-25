@@ -1,9 +1,12 @@
 const en_US = {
-  nav: {
-    chi: 'CN',
-    eng: 'EN',
-    personalCenter: 'Personal Center',
-    logout: 'Sign Out'
+  login: {
+    title: 'management system',
+    loginForm: {
+      userMsg: 'Please enter the account number',
+      userMsglimit: 'Length should be 3 to 5',
+      pwdMsg: 'Please input a password',
+      loginBtn: 'login'
+    }
   }
 }
 export default en_US
