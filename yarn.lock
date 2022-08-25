@@ -14,6 +14,11 @@
   dependencies:
     "@babel/highlight" "^7.18.6"
 
+"@babel/helper-string-parser@^7.18.10":
+  version "7.18.10"
+  resolved "https://registry.npmmirror.com/@babel/helper-string-parser/-/helper-string-parser-7.18.10.tgz#181f22d28ebe1b3857fa575f5c290b1aaf659b56"
+  integrity sha512-XtIfWmeNY3i4t7t4D2t02q50HvqHybPqW2ki1kosnvWCwuCMeo81Jf0gwr85jy/neUdg5XDdeFE/80DXiO+njw==
+
 "@babel/helper-validator-identifier@^7.18.6":
   version "7.18.6"
   resolved "https://registry.npmmirror.com/@babel/helper-validator-identifier/-/helper-validator-identifier-7.18.6.tgz"
@@ -32,6 +37,20 @@
   version "7.18.11"
   resolved "https://registry.npmmirror.com/@babel/parser/-/parser-7.18.11.tgz"
   integrity sha512-9JKn5vN+hDt0Hdqn1PiJ2guflwP+B6Ga8qbDuoF0PzzVhrzsKIJo8yGqVk6CmMHiMei9w1C1Bp9IMJSIK+HPIQ==
+
+"@babel/parser@^7.18.9":
+  version "7.18.13"
+  resolved "https://registry.npmmirror.com/@babel/parser/-/parser-7.18.13.tgz#5b2dd21cae4a2c5145f1fbd8ca103f9313d3b7e4"
+  integrity sha512-dgXcIfMuQ0kgzLB2b9tRZs7TTFFaGM2AbtA4fJgUUYukzGH4jwsS7hzQHEGs67jdehpm22vkgKwvbU+aEflgwg==
+
+"@babel/types@^7.18.10", "@babel/types@^7.18.9":
+  version "7.18.13"
+  resolved "https://registry.npmmirror.com/@babel/types/-/types-7.18.13.tgz#30aeb9e514f4100f7c1cb6e5ba472b30e48f519a"
+  integrity sha512-ePqfTihzW0W6XAU+aMw2ykilisStJfDnsejDCXRchCcMJ4O0+8DhPXf2YUbZ6wjBlsEmZwLK/sPweWtu8hcJYQ==
+  dependencies:
+    "@babel/helper-string-parser" "^7.18.10"
+    "@babel/helper-validator-identifier" "^7.18.6"
+    to-fast-properties "^2.0.0"
 
 "@commitlint/cli@^16.2.4":
   version "16.3.0"
@@ -558,6 +577,15 @@
     "@volar/typescript-faster" "0.39.5"
     "@volar/vue-language-core" "0.39.5"
 
+"@vue-macros/common@0.10.0":
+  version "0.10.0"
+  resolved "https://registry.npmmirror.com/@vue-macros/common/-/common-0.10.0.tgz#c68477d44929ca0223ec38b48a05b7f2c7cf23af"
+  integrity sha512-g5sTVG0ltL1f8EjEO8W5EG+jEKjircYprlkr1Qc+pNvqCIRV+OlAi/WHNrMEK6PIwb2t3EWudCFMo5Fq/IMGMw==
+  dependencies:
+    "@babel/types" "^7.18.10"
+    "@vue/compiler-sfc" "^3.2.37"
+    magic-string "^0.26.2"
+
 "@vue/compiler-core@3.2.37", "@vue/compiler-core@^3.2.37":
   version "3.2.37"
   resolved "https://registry.npmmirror.com/@vue/compiler-core/-/compiler-core-3.2.37.tgz"
@@ -805,6 +833,14 @@ arrify@^1.0.1:
   version "1.0.1"
   resolved "https://registry.npmmirror.com/arrify/-/arrify-1.0.1.tgz"
   integrity sha512-3CYzex9M9FGQjCGMGyi6/31c8GJbgb0qGyrx5HWxPd0aCwh4cB2YjMb2Xf9UuoogrMrlO9cTqnB5rI5GHZTcUA==
+
+ast-walker-scope@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.npmmirror.com/ast-walker-scope/-/ast-walker-scope-0.2.1.tgz#e96b7a41efed1ed555ac326feff0dae6bd6fa48c"
+  integrity sha512-SBqTj/8RpqNirpJUVj/3I5P3aWMV6CBUD/BXs8Ie7R/TNOnHRVzWWmXF+BDdstjgYMJMT9+ywa8lHXx7lXwegw==
+  dependencies:
+    "@babel/parser" "^7.18.9"
+    "@babel/types" "^7.18.9"
 
 astral-regex@^2.0.0:
   version "2.0.0"
@@ -3161,6 +3197,11 @@ through2@^4.0.0:
   resolved "https://registry.npmmirror.com/through/-/through-2.3.8.tgz"
   integrity sha512-w89qg7PI8wAdvX60bMDP+bFoD5Dvhm9oLheFp5O4a2QF0cSBGsBX4qZmadPMvVqlLJBBci+WqGGOAPvcDeNSVg==
 
+to-fast-properties@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.npmmirror.com/to-fast-properties/-/to-fast-properties-2.0.0.tgz#dc5e698cbd079265bc73e0377681a4e4e83f616e"
+  integrity sha512-/OaKK0xYrs3DmxRYqL/yDc+FxFUVYhDlXMhRmv3z915w2HF1tnN1omB354j8VUGO/hbRzyD6Y3sA7v7GS/ceog==
+
 to-regex-range@^5.0.1:
   version "5.0.1"
   resolved "https://registry.npmmirror.com/to-regex-range/-/to-regex-range-5.0.1.tgz"
@@ -3318,6 +3359,16 @@ unplugin-vue-components@^0.22.4:
     magic-string "^0.26.2"
     minimatch "^5.1.0"
     resolve "^1.22.1"
+    unplugin "^0.9.0"
+
+unplugin-vue-define-options@^0.10.0:
+  version "0.10.0"
+  resolved "https://registry.npmmirror.com/unplugin-vue-define-options/-/unplugin-vue-define-options-0.10.0.tgz#fa0cb4c5b25601f22af4a26e1d8158b3f78302ae"
+  integrity sha512-YvFdhdakRfrtArtMRCnqiQ74zYP/KicZpAqUYqPhtAL1r6aBxpj+soWBg0k5VxCbmwvjkuEWlYgOgdf6hqOc/A==
+  dependencies:
+    "@rollup/pluginutils" "^4.2.1"
+    "@vue-macros/common" "0.10.0"
+    ast-walker-scope "^0.2.1"
     unplugin "^0.9.0"
 
 unplugin@^0.9.0:

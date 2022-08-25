@@ -1,4 +1,5 @@
 import type { AppRouteRecordRaw } from '@/router/types'
+import { createRouter, createWebHashHistory, Router } from 'vue-router'
 
 export const constantRoutes:AppRouteRecordRaw[] = [
   {
@@ -11,3 +12,15 @@ export const constantRoutes:AppRouteRecordRaw[] = [
     }
   }
 ]
+
+export const asyncRoutes: AppRouteRecordRaw[] = [
+
+]
+
+const router:Router = createRouter({
+  history: createWebHashHistory('./'),
+  routes: constantRoutes,
+  scrollBehavior: () => ({ left: 0, top: 0 })
+})
+
+export default router

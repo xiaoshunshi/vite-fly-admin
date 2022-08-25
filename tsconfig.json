@@ -17,6 +17,7 @@
       "@/*":["src/*"]
     },
     // 配置全局类型声明
+    "types": ["node", "vite/client", "element-plus/global", "unplugin-vue-define-options"],
     "typeRoots": ["./node_modules/@types/", "./types"]
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue","types/*.d.ts"],
