@@ -50,6 +50,10 @@ import { computed, reactive, ref } from 'vue'
 import type { FormInstance, FormRules } from 'element-plus'
 import { useI18n } from 'vue-i18n'
 
+import { Login } from '@/api/login'
+defineOptions({
+  name: 'login'
+})
 const loginFormRef = ref<FormInstance>()
 const loginForm = reactive({
   username: 'admin',
@@ -75,7 +79,9 @@ function loginHandle () {
   loginFormRef.value?.validate(async (valid:boolean):Promise<void> => {
     if (valid) {
       // 登录逻辑
-
+      Login(loginForm).then(res => {
+        console.log(res)
+      })
     }
   })
 }

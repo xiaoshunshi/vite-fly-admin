@@ -7,6 +7,7 @@ import '@/styles/index.scss' // global css
 import i18n from './lang'
 import './permission'
 const app = createApp(App)
+console.log(import.meta.env)
 
 const initApp = async () => {
   app.use(router)

@@ -1,4 +1,6 @@
 import axios, { AxiosInstance, AxiosRequestConfig } from 'axios'
+import { ElMessage } from 'element-plus'
+// import cookies from '@/utils/cookies'
 import { getEnvs } from './envs'
 type optionsType = {
   url:string,
@@ -24,7 +26,7 @@ class HttpRequest {
 
     const baseUrlStr = envStr === 'dev'
       ? import.meta.env.VITE_PROXY_DOMAIN
-      : '123456'
+      : ''
 
     return baseUrlStr
   }
@@ -46,7 +48,6 @@ class HttpRequest {
   //  get 使用   params
   getParams (payload:any) {
     const { method, data } = payload
-
     if (['post', 'put', 'patch', 'delete'].indexOf(method) >= 0) {
       payload.data = data
     } else {
@@ -59,6 +60,16 @@ class HttpRequest {
   //   设置拦截
   setInterceptors (instance:AxiosInstance) {
     instance.interceptors.request.use((config:AxiosRequestConfig) => {
+      if (!navigator.onLine) {
+        ElMessage({
+          message: '请检查您的网络是否正常',
+          type: 'error',
+          duration: 3 * 1000
+        })
+        return Promise.reject(new Error('请检查您的网络是否正常'))
+      }
+
+      // const token = cookies.get(TOKEN)
       return config
     })
     instance.interceptors.response.use((response:AxiosRequestConfig) => {
