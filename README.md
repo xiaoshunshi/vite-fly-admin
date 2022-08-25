@@ -6,10 +6,6 @@
   ```
   import path from 'path'
   const resolve = (dir: string) => path.join(__dirname, dir)
-  
-  
-  
-  
    resolve: {
       alias: {
         '@': resolve('src')
@@ -17,7 +13,7 @@
     },
       
   ```
-
+  
 - 配置serve
 
   ```
@@ -497,5 +493,5 @@
 - [x] 添加pinia
 - [ ] 添加axios
 - [x] 安装sass    添加normalize.scss
-
 - [x] 添加语言国际化i18n
+- [ ] 准备登录页面

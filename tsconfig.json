@@ -15,8 +15,10 @@
     "skipLibCheck": true,
     "paths": {
       "@/*":["src/*"]
-    }
+    },
+    // 配置全局类型声明
+    "typeRoots": ["./node_modules/@types/", "./types"]
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue","types/*.d.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
