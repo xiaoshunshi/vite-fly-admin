@@ -57,7 +57,7 @@ class CookiesProxy implements ProxyCookie {
     return Cookies.set(keyStr, value, options)
   }
 
-  remove (key: string, hasPrefix: boolean) {
+  remove (key: string, hasPrefix = true) {
     const keyStr = !hasPrefix ? key : this.prefix + '' + key
     return Cookies.remove(keyStr, {
       path: '/',

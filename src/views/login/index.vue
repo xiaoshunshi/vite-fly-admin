@@ -51,9 +51,13 @@ import type { FormInstance, FormRules } from 'element-plus'
 import { useI18n } from 'vue-i18n'
 
 import { login } from '@/api/login'
+import { useUserStore } from '@/store'
+import { useRouter } from 'vue-router'
 defineOptions({
   name: 'login'
 })
+const router = useRouter()
+const userStore = useUserStore()
 const loginFormRef = ref<FormInstance>()
 const loginForm = reactive({
   username: 'admin',
@@ -81,7 +85,9 @@ function loginHandle () {
       try {
         // 登录逻辑
         const { data } = await login(loginForm)
-        console.log(data)
+        const { token } = data
+        userStore.SET_TOKEN(token)
+        router.push('/')
       } catch (e) {} finally {
         loading.value = false
       }
