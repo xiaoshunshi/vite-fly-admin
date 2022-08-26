@@ -1,6 +1,6 @@
 import type { AppRouteRecordRaw } from '@/router/types'
 import { createRouter, createWebHashHistory, Router, RouteRecordRaw } from 'vue-router'
-
+import Layout from '@/layout/index.vue'
 export const constantRoutes:AppRouteRecordRaw[] = [
   {
     path: '/login',
@@ -14,6 +14,28 @@ export const constantRoutes:AppRouteRecordRaw[] = [
 ]
 
 export const asyncRoutes: AppRouteRecordRaw[] = [
+  {
+    path: '/',
+    name: 'Dashboard',
+    component: Layout,
+    redirect: '/dashboard',
+    meta: {
+      title: '主页'
+    },
+    children: [
+      {
+        path: 'dashboard',
+        name: 'Dashboard',
+        component: () => import('@/views/dashboard/index.vue'),
+        meta: {
+          title: '主页',
+          icon: 'dashboard',
+          noCache: true,
+          affix: true
+        }
+      }
+    ]
+  }
 
 ]
 
