@@ -485,15 +485,29 @@
 ## 待办
 
 - [x] 创建github仓库
+
 - [x] 配置vite.cofnig.ts 配置别名
+
 - [x] 配置eslint
+
 - [x] 配置GitCommit
+
 - [x] 添加elementplus
+
 - [x] 添加vue-router
+
 - [x] 添加pinia
+
 - [x] 添加axios，封装axios
+
 - [x] 安装sass    添加normalize.scss
+
 - [x] 添加语言国际化i18n
+
 - [x] 重写路由，添加ts配置校验
-- [ ] 登录页面
+
+- [ ] 登录页面重写piana的stroejs
+
+  
+
 - [ ] layout和全局路由拦截功能

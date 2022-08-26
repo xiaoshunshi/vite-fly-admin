@@ -1,22 +1,10 @@
 
-import { defineStore } from 'pinia'
-export default defineStore('myGlobalState', {
-  state: () => {
-    return {
-      count: 1,
-      message: 'Hello world',
-      phone: 13811111199
-    }
-  },
-  actions: {
-    countAdd () {
-      this.count++
-    }
-  },
-  getters: {
-    countSum (state) {
-      return state.count * 2
-    }
-  }
+import { createPinia } from 'pinia'
+import type { App } from 'vue'
+const store = createPinia()
 
-})
+export function registerStore (app:App) {
+  app.use(store)
+}
+
+export default store

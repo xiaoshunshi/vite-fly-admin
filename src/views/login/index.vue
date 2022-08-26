@@ -50,7 +50,7 @@ import { computed, reactive, ref } from 'vue'
 import type { FormInstance, FormRules } from 'element-plus'
 import { useI18n } from 'vue-i18n'
 
-import { Login } from '@/api/login'
+import { login } from '@/api/login'
 defineOptions({
   name: 'login'
 })
@@ -78,10 +78,13 @@ function loginHandle () {
   loading.value = true
   loginFormRef.value?.validate(async (valid:boolean):Promise<void> => {
     if (valid) {
-      // 登录逻辑
-      Login(loginForm).then(res => {
-        console.log(res)
-      })
+      try {
+        // 登录逻辑
+        const { data } = await login(loginForm)
+        console.log(data)
+      } catch (e) {} finally {
+        loading.value = false
+      }
     }
   })
 }

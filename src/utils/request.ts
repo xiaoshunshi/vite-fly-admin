@@ -72,8 +72,27 @@ class HttpRequest {
       // const token = cookies.get(TOKEN)
       return config
     })
-    instance.interceptors.response.use((response:AxiosRequestConfig) => {
-      return response
+    instance.interceptors.response.use((res:AxiosRequestConfig) => {
+      console.log(res)
+      //       config: {transitional: {…}, transformRequest: Array(1), transformResponse: Array(1), timeout: 86400000, adapter: ƒ, …}
+      // data: {code: 200, data: {…}, msg: 'success'}
+      // headers: {access-control-allow-credentials: 'true', access-control-allow-origin: 'http://localhost:3088', connection: 'close', content-length: '103', content-type: 'application/json; charset=utf-8', …}
+      // request: XMLHttpRequest {onreadystatechange: null, readyState: 4, timeout: 86400000, withCredentials: false, upload: XMLHttpRequestUpload, …}
+      // status: 200
+      // statusText: "OK"
+      const ressult = res.data
+      const { code, msg } = ressult
+
+      if (code === 200) {
+        return ressult
+      } else {
+        ElMessage({
+          message: msg || 'Error',
+          type: 'error',
+          duration: 3 * 1000
+        })
+        return Promise.reject(new Error(msg || 'Error'))
+      }
     })
   }
 
