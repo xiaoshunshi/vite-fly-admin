@@ -1,13 +1,9 @@
 <template>
-  <el-menu
-
-    class="sidebar-menus"
-  >
-    <SidebarItem />
-  </el-menu>
+  <div>
+    sidebarItem
+  </div>
 </template>
 <script lang='ts' setup>
-
 </script>
 <style lang='scss' scoped>
 </style>

@@ -5,29 +5,29 @@ import { storeToRefs } from 'pinia'
 import { useI18n } from 'vue-i18n'
 
 const store = useCommonStore()
-const data = storeToRefs(store)
+const data = storeToRefs( store )
 // 常规方法修改内容
 const storeAdd = () => {
   data.count.value++
 }
 // $patch修改内容
 const storeAddOne = () => {
-  store.$patch({
-    count: store.count + 1
-  })
+  store.$patch( {
+    count : store.count + 1
+  } )
 }
 // $patch修改内容，内带对象
 const storeAddTwo = () => {
-  store.$patch((state) => {
+  store.$patch( ( state ) => {
     state.count++
-  })
+  } )
 }
 // $state修改整体内容
 const storeRest = () => {
   store.$state = {
-    count: 1,
-    message: 'Hello world',
-    phone: 13811111199
+    count : 1,
+    message : 'Hello world',
+    phone : 13811111199
   }
 }
 // $reset重置为初始内容
@@ -35,16 +35,16 @@ const storeRestOne = () => {
   store.$reset()
 }
 // $subscribe监听整个仓库变化
-store.$subscribe((mutation, store) => {
-  console.log('mutation', mutation)
-  console.log('store', store)
-})
+store.$subscribe( ( mutation, store ) => {
+  console.log( 'mutation', mutation )
+  console.log( 'store', store )
+} )
 
 const { locale } = useI18n() // vue-i18n提供了一个钩子函数 useI18n(),暴露出locale属性用于切换语言
 locale.value = 'en_US' // 要切换的语言
 // locale.value = 'zh_CN' // 要切换的语言
-const chi = useI18n().t('nav.chi')
-const eng = useI18n().t('nav.eng')
+const chi = useI18n().t( 'nav.chi' )
+const eng = useI18n().t( 'nav.eng' )
 </script>
 
 <template>

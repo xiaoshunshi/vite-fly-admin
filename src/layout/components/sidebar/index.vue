@@ -1,14 +1,37 @@
 <template>
-  <div>
-    <Logo />
+  <div :class="{ 'has-logo': set.showLogo }">
+    <Logo :class="set.layoutMod + '-logo'" v-if="set.showLogo" :collapse="set.isCollapse" />
     <el-scrollbar wrap-class="scrollbar-wrapper">
       <Menu />
     </el-scrollbar>
   </div>
 </template>
-<script lang='ts' setup>
+
+<script setup lang="ts">
+import { computed, reactive } from 'vue'
+import { useAppStore, useSettingsStore } from '@/store'
 import Logo from './Logo.vue'
 import Menu from './Menu.vue'
+
+const appStore = useAppStore()
+const settingsStore = useSettingsStore()
+
+const set = reactive( {
+  showLogo : computed( () => {
+    return settingsStore.sidebarLogo
+  } ),
+  layoutMod : computed( () => {
+    return settingsStore.layoutMod
+  } ),
+  isCollapse : computed( () => {
+    return !appStore.sidebar.opened
+  } )
+} )
 </script>
-<style lang='scss' scoped>
+
+<style scoped lang="scss">
+.horizontal-logo {
+  width: 210px;
+  display: flex;
+}
 </style>

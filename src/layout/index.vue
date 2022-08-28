@@ -1,7 +1,6 @@
 <template>
   <div class="app-wraper">
     <div class="layout-section">
-      测试
       <SideBar />
     </div>
   </div>

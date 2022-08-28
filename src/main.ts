@@ -6,14 +6,14 @@ import 'normalize.scss/normalize.scss'
 import '@/styles/index.scss' // global css
 import i18n from './lang'
 import './permission'
-const app = createApp(App)
+const app = createApp( App )
 
-const initApp = async () => {
-  app.use(router)
-  registerStore(app)
+const initApp = async() => {
+  app.use( router )
+  registerStore( app )
   await router.isReady()
-  app.use(i18n)
-  app.mount('#app')
+  app.use( i18n )
+  app.mount( '#app' )
 }
 
 initApp()

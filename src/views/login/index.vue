@@ -53,46 +53,46 @@ import { useI18n } from 'vue-i18n'
 import { login } from '@/api/login'
 import { useUserStore } from '@/store'
 import { useRouter } from 'vue-router'
-defineOptions({
-  name: 'login'
-})
+defineOptions( {
+  name : 'login'
+} )
 const router = useRouter()
 const userStore = useUserStore()
 const loginFormRef = ref<FormInstance>()
-const loginForm = reactive({
-  username: 'admin',
-  password: '123456'
-})
+const loginForm = reactive( {
+  username : 'admin',
+  password : '123456'
+} )
 
-const loading = ref<boolean>(false)
+const loading = ref<boolean>( false )
 const trigger = ['blur', 'change']
-const rules = reactive<FormRules>({
-  username: [{ required: true, message: useI18n().t('login.loginForm.userMsg'), trigger },
-    { min: 3, max: 5, message: useI18n().t('login.loginForm.userMsglimit'), trigger }],
-  password: [
-    { required: true, message: useI18n().t('login.loginForm.pwdMsg'), trigger }
+const rules = reactive<FormRules>( {
+  username : [{ required : true, message : useI18n().t( 'login.loginForm.userMsg' ), trigger },
+    { min : 3, max : 5, message : useI18n().t( 'login.loginForm.userMsglimit' ), trigger }],
+  password : [
+    { required : true, message : useI18n().t( 'login.loginForm.pwdMsg' ), trigger }
   ]
-})
-const disabledLogin = computed(():boolean => {
+} )
+const disabledLogin = computed( ():boolean => {
   const { username, password } = loginForm
   return !username || !password
-})
+} )
 
-function loginHandle () {
+function loginHandle() {
   loading.value = true
-  loginFormRef.value?.validate(async (valid:boolean):Promise<void> => {
-    if (valid) {
+  loginFormRef.value?.validate( async( valid:boolean ):Promise<void> => {
+    if ( valid ) {
       try {
         // 登录逻辑
-        const { data } = await login(loginForm)
+        const { data } = await login( loginForm )
         const { token } = data
-        userStore.SET_TOKEN(token)
-        router.push('/')
-      } catch (e) {} finally {
+        userStore.SET_TOKEN( token )
+        router.push( '/' )
+      } catch ( e ) {} finally {
         loading.value = false
       }
     }
-  })
+  } )
 }
 
 </script>
