@@ -4,11 +4,16 @@ import NProgress from '@/utils/progress'
 
 import { TOKEN } from '@/config/constant'
 import cookies from './utils/cookies'
+import { useUserStore, usePermissionStore } from '@/store'
+
 const whiteList = ['/login']
 router.beforeEach( async( to:toRouteType, form, next ):Promise<void> => {
   NProgress.start()
 
   const hasToken = cookies.get( TOKEN )
+  const userStore = useUserStore()
+  const permissionStore = usePermissionStore()
+  console.log( permissionStore )
   if ( hasToken && hasToken !== 'undefined' ) {
     // 有token
     if ( to.path === '/login' ) {
@@ -16,6 +21,8 @@ router.beforeEach( async( to:toRouteType, form, next ):Promise<void> => {
       next( { path : '/' } )
       NProgress.done()
     } else {
+      const hasRoles = userStore.roles && userStore.roles.length > 0
+      console.log( hasRoles )
       // 跳转的不是登录页面
       next()
     }

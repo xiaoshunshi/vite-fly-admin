@@ -7,7 +7,8 @@ const useUserStore = defineStore( {
   state : ():userType => {
     return {
       token : '',
-      avatar : AVATAR
+      avatar : AVATAR,
+      roles : []
     }
   },
   actions : {
