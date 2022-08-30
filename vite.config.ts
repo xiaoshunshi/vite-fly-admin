@@ -8,6 +8,8 @@ import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import DefineOptions from 'unplugin-vue-define-options/vite'
 import { viteMockServe } from 'vite-plugin-mock'
 import path from 'path'
+
+import { isMock } from './mock/config'
 const resolve = ( dir: string ) => path.join( __dirname, dir )
 // https://vitejs.dev/config/
 export default defineConfig( {
@@ -16,8 +18,8 @@ export default defineConfig( {
     vue(),
     viteMockServe( {
       mockPath : 'mock', // 解析，路径可根据实际变动
-      localEnabled : true, // 开发环境
-      prodEnabled : true, // 生产环境设为true，也可以根据官方文档格式
+      localEnabled : isMock, // 开发环境
+      prodEnabled : false, // 生产环境设为true，也可以根据官方文档格式
       injectCode :
       ` import { setupProdMockServer } from './src/mock';
         setupProdMockServer(); `,

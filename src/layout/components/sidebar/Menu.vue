@@ -49,7 +49,7 @@ import {
 } from '@element-plus/icons-vue'
 import { reactive, computed } from 'vue'
 import { useRoute } from 'vue-router'
-import { useAppStore, useSettingsStore, usePermissionStore } from '@/store'
+import { useAppStore, usePermissionStore } from '@/store'
 
 const handleOpen = ( key: string, keyPath: string[] ) => {
   console.log( key, keyPath )
@@ -61,13 +61,13 @@ const handleClose = ( key: string, keyPath: string[] ) => {
 const route = useRoute()
 console.log( route )
 const appStore = useAppStore()
-const settingsStore = useSettingsStore()
+// const settingsStore = useSettingsStore()
 const permissionStore = usePermissionStore()
 
 const set = reactive( {
-  layoutMod : computed( () => {
-    return settingsStore.layoutMod
-  } ),
+  // layoutMod : computed( () => {
+  //   return settingsStore.layoutMod
+  // } ),
   isCollapse : computed( () => {
     return !appStore.sidebar.opened
   } ),

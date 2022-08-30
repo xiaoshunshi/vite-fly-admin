@@ -45,8 +45,8 @@ const list = () => {
 
 export default [
   {
-    url : '/api/login',
-    type : 'get',
+    url : '/api/user/login',
+    type : 'post',
     response : () => {
       return {
         code : 200,

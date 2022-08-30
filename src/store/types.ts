@@ -11,12 +11,12 @@ export type appType = {
 }
 
 export type setType = {
-  theme?: string
-  showSettings: boolean
-  tagsView: boolean
-  fixedHeader: boolean
+  // theme?: string
+  // showSettings: boolean
+  // tagsView: boolean
+  // fixedHeader: boolean
   sidebarLogo: boolean
-  layoutMod: string
+  // layoutMod: string
 }
 
 export type userType = {
