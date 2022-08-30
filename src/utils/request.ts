@@ -34,11 +34,11 @@ class HttpRequest {
   //   获取axios的基本配置信息
   getConfig() {
     const config = {
-      baseURL : this.baseUrl,
-      timeout : this.timeout,
-      withCredentials : this.withCredentials,
-      headers : {
-        'Content-Type' : 'application/json;charset=UTF-8'
+      baseURL: this.baseUrl,
+      timeout: this.timeout,
+      withCredentials: this.withCredentials,
+      headers: {
+        'Content-Type': 'application/json;charset=UTF-8'
       }
     }
     return config
@@ -62,9 +62,9 @@ class HttpRequest {
     instance.interceptors.request.use( ( config:AxiosRequestConfig ) => {
       if ( !navigator.onLine ) {
         ElMessage( {
-          message : '请检查您的网络是否正常',
-          type : 'error',
-          duration : 3 * 1000
+          message: '请检查您的网络是否正常',
+          type: 'error',
+          duration: 3 * 1000
         } )
         return Promise.reject( new Error( '请检查您的网络是否正常' ) )
       }
@@ -87,9 +87,9 @@ class HttpRequest {
         return ressult
       } else {
         ElMessage( {
-          message : msg || 'Error',
-          type : 'error',
-          duration : 3 * 1000
+          message: msg || 'Error',
+          type: 'error',
+          duration: 3 * 1000
         } )
         return Promise.reject( new Error( msg || 'Error' ) )
       }

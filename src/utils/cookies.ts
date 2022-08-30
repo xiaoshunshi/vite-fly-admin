@@ -16,9 +16,9 @@ class CookiesProxy implements ProxyCookie {
   constructor() {
     this.prefix = this.getPrefix()
     this.baseParams = {
-      expires : 7,
-      path : '/',
-      domain : hostname || undefined
+      expires: 7,
+      path: '/',
+      domain: hostname || undefined
       // Secure : true,
       // SameSite : 'none',
     }
@@ -60,8 +60,8 @@ class CookiesProxy implements ProxyCookie {
   remove( key: string, hasPrefix = true ) {
     const keyStr = !hasPrefix ? key : this.prefix + '' + key
     return Cookies.remove( keyStr, {
-      path : '/',
-      domain : hostname
+      path: '/',
+      domain: hostname
     } )
   }
 }

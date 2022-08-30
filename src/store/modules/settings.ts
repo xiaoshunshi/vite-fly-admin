@@ -4,11 +4,11 @@ import defaultSettings from '@/settings'
 import { localStorageHandle } from '@/utils/storage'
 const { sidebarLogo } = defaultSettings
 const useSettingStore = defineStore( {
-  id : 'settings',
-  state : ():setType => {
+  id: 'settings',
+  state: ():setType => {
     const localSidebarLogo = localStorageHandle.getItem( 'sidebarLogo' )
     return {
-      sidebarLogo : localSidebarLogo ? !!+localSidebarLogo : sidebarLogo
+      sidebarLogo: localSidebarLogo ? !!+localSidebarLogo : sidebarLogo
     }
   }
 } )

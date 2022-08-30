@@ -13,7 +13,7 @@ const storeAdd = () => {
 // $patch修改内容
 const storeAddOne = () => {
   store.$patch( {
-    count : store.count + 1
+    count: store.count + 1
   } )
 }
 // $patch修改内容，内带对象
@@ -25,9 +25,9 @@ const storeAddTwo = () => {
 // $state修改整体内容
 const storeRest = () => {
   store.$state = {
-    count : 1,
-    message : 'Hello world',
-    phone : 13811111199
+    count: 1,
+    message: 'Hello world',
+    phone: 13811111199
   }
 }
 // $reset重置为初始内容

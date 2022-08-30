@@ -18,7 +18,7 @@ router.beforeEach( async( to:toRouteType, form, next ):Promise<void> => {
     // 有token
     if ( to.path === '/login' ) {
       // 是登录页面，直接转入到首页，不让二次登录
-      next( { path : '/' } )
+      next( { path: '/' } )
       NProgress.done()
     } else {
       const hasRoles = userStore.roles && userStore.roles.length > 0

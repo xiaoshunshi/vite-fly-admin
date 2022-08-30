@@ -54,23 +54,23 @@ import { login } from '@/api/login'
 import { useUserStore } from '@/store'
 import { useRouter } from 'vue-router'
 defineOptions( {
-  name : 'login'
+  name: 'login'
 } )
 const router = useRouter()
 const userStore = useUserStore()
 const loginFormRef = ref<FormInstance>()
 const loginForm = reactive( {
-  username : 'admin',
-  password : '123456'
+  username: 'admin',
+  password: '123456'
 } )
 
 const loading = ref<boolean>( false )
 const trigger = ['blur', 'change']
 const rules = reactive<FormRules>( {
-  username : [{ required : true, message : useI18n().t( 'login.loginForm.userMsg' ), trigger },
-    { min : 3, max : 5, message : useI18n().t( 'login.loginForm.userMsglimit' ), trigger }],
-  password : [
-    { required : true, message : useI18n().t( 'login.loginForm.pwdMsg' ), trigger }
+  username: [{ required: true, message: useI18n().t( 'login.loginForm.userMsg' ), trigger },
+    { min: 3, max: 5, message: useI18n().t( 'login.loginForm.userMsglimit' ), trigger }],
+  password: [
+    { required: true, message: useI18n().t( 'login.loginForm.pwdMsg' ), trigger }
   ]
 } )
 const disabledLogin = computed( ():boolean => {

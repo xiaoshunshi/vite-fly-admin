@@ -68,17 +68,17 @@ const set = reactive( {
   // layoutMod : computed( () => {
   //   return settingsStore.layoutMod
   // } ),
-  isCollapse : computed( () => {
+  isCollapse: computed( () => {
     return !appStore.sidebar.opened
   } ),
-  activeMenu : computed( () => {
+  activeMenu: computed( () => {
     const { meta, path } = route
     if ( meta.activeMenu ) {
       return meta.activeMenu
     }
     return path
   } ),
-  routerLists : computed( () => {
+  routerLists: computed( () => {
     console.log( permissionStore.routes )
     return permissionStore.routes
   } )

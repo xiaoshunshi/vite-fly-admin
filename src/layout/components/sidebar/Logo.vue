@@ -30,13 +30,13 @@ import logo from '@/assets/imgs/logo2.png'
 import defaultSettings from '@/settings'
 const { title } = defaultSettings
 const props = defineProps( {
-  collapse : {
-    type : Boolean,
-    required : true
+  collapse: {
+    type: Boolean,
+    required: true
   }
 } )
 defineOptions( {
-  name : 'SidebarLogo'
+  name: 'SidebarLogo'
 } )
 </script>
 <style lang='scss' scoped>

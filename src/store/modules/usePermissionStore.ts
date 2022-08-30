@@ -37,15 +37,15 @@ export function filterAsyncRoutes( routes: AppRouteRecordRaw[], roles: string[] 
 }
 
 const usePermissionStore = defineStore( {
-  id : 'permission',
-  state : () => {
+  id: 'permission',
+  state: () => {
     return {
-      routes : Array<AppRouteRecordRaw>(),
-      addRoutes : Array<AppRouteRecordRaw>(),
-      directivePermission : Array<string>()
+      routes: Array<AppRouteRecordRaw>(),
+      addRoutes: Array<AppRouteRecordRaw>(),
+      directivePermission: Array<string>()
     }
   },
-  actions : {
+  actions: {
     SET_ROUTES( roles: string[] ): Promise<AppRouteRecordRaw[]> {
       return new Promise( resolve => {
         let accessedRoutes: Array<AppRouteRecordRaw>

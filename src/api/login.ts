@@ -11,8 +11,8 @@ import { requestType } from './index'
 // }
 export function login( data?: object ): requestType {
   return http.request( {
-    method : 'post',
-    url : '/user/login',
+    method: 'post',
+    url: '/user/login',
     data
   } )
 }

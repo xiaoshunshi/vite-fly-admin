@@ -3,20 +3,20 @@ import { defineStore } from 'pinia'
 import { appType } from '../types'
 
 const useAppStore = defineStore( {
-  id : 'app',
-  state : ():appType => {
+  id: 'app',
+  state: ():appType => {
     const status = cookies.get( 'sidebarStatus' )
     return {
-      sidebar : {
-        opened : status ? !!+status : true,
-        withoutAnimation : false
+      sidebar: {
+        opened: status ? !!+status : true,
+        withoutAnimation: false
       },
-      device : 'desktop',
-      size : cookies.get( 'size' ) || 'default',
-      lang : cookies.get( 'lang' ) || 'zh'
+      device: 'desktop',
+      size: cookies.get( 'size' ) || 'default',
+      lang: cookies.get( 'lang' ) || 'zh'
     }
   },
-  actions : {
+  actions: {
     TOGGLE_SIDEBAR() {
       this.sidebar.opened = !this.sidebar.opened
       this.sidebar.withoutAnimation = false

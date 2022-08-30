@@ -5,12 +5,12 @@ import zh_CN from './zh_CN'
 import en_US from './en_US'
 
 const i18n = createI18n( {
-  legacy : false, // Composition API 模式
-  globalInjection : true, // 全局注册 $t方法
+  legacy: false, // Composition API 模式
+  globalInjection: true, // 全局注册 $t方法
   // 默认语言
-  locale : 'zh_CN',
+  locale: 'zh_CN',
   // 语言库
-  messages : {
+  messages: {
     zh_CN,
     en_US
   }

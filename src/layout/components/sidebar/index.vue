@@ -17,13 +17,13 @@ const appStore = useAppStore()
 const settingsStore = useSettingsStore()
 
 const set = reactive( {
-  showLogo : computed( () => {
+  showLogo: computed( () => {
     return settingsStore.sidebarLogo
   } ),
-  layoutMod : computed( () => {
+  layoutMod: computed( () => {
     return settingsStore.layoutMod
   } ),
-  isCollapse : computed( () => {
+  isCollapse: computed( () => {
     return !appStore.sidebar.opened
   } )
 } )
