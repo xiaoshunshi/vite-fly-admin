@@ -12,18 +12,10 @@
           {{ $t("login.title") }}
         </h3>
       </div>
-      <el-form-item
-        prop="username"
-      >
-        <el-input
-          v-model="loginForm.username"
-          :clearable="true"
-          :placeholder="$t('login.loginForm.userMsg')"
-        />
+      <el-form-item prop="username">
+        <el-input v-model="loginForm.username" :clearable="true" :placeholder="$t('login.loginForm.userMsg')" />
       </el-form-item>
-      <el-form-item
-        prop="password"
-      >
+      <el-form-item prop="password">
         <el-input
           v-model="loginForm.password"
           type="password"
@@ -73,14 +65,14 @@ const rules = reactive<FormRules>( {
     { required: true, message: useI18n().t( 'login.loginForm.pwdMsg' ), trigger }
   ]
 } )
-const disabledLogin = computed( ():boolean => {
+const disabledLogin = computed( (): boolean => {
   const { username, password } = loginForm
   return !username || !password
 } )
 
 function loginHandle() {
   loading.value = true
-  loginFormRef.value?.validate( async( valid:boolean ):Promise<void> => {
+  loginFormRef.value?.validate( async( valid: boolean ): Promise<void> => {
     if ( valid ) {
       try {
         // 登录逻辑
@@ -88,7 +80,7 @@ function loginHandle() {
         const { token } = data
         userStore.SET_TOKEN( token )
         router.push( '/' )
-      } catch ( e ) {} finally {
+      } catch ( e ) { } finally {
         loading.value = false
       }
     }
@@ -97,14 +89,16 @@ function loginHandle() {
 
 </script>
 <style lang='scss' scoped>
-$bg:#2d3a4b;
-$light_gray:#eee;
-.login-container{
+$bg: #2d3a4b;
+$light_gray: #eee;
+
+.login-container {
   min-height: 100%;
   width: 100%;
-  background-color:$bg;
+  background-color: $bg;
   overflow: hidden;
-   .login-form {
+
+  .login-form {
     position: relative;
     width: 520px;
     max-width: 100%;
@@ -112,17 +106,17 @@ $light_gray:#eee;
     margin: 0 auto;
     overflow: hidden;
 
-  .title-container {
-    position: relative;
+    .title-container {
+      position: relative;
 
-    .title {
-      font-size: 26px;
-      color: $light_gray;
-      margin: 0px auto 40px auto;
-      text-align: center;
-      font-weight: bold;
+      .title {
+        font-size: 26px;
+        color: $light_gray;
+        margin: 0px auto 40px auto;
+        text-align: center;
+        font-weight: bold;
+      }
     }
-  }
   }
 }
 </style>
